@@ -33,6 +33,7 @@ class Controller : Initializable {
         checkSumView.textProperty().addListener { observable, oldText, newText ->
             copyBtn.isVisible = !newText.isNullOrEmpty()
         }
+
         gridPane.setOnDragOver {
             val dragEvent = it.dragboard
 
@@ -40,8 +41,8 @@ class Controller : Initializable {
                 it.acceptTransferModes(TransferMode.COPY)
             }
         }
-        gridPane.setOnDragDropped {
 
+        gridPane.setOnDragDropped {
             val dragEvent = it.dragboard
             var dragSuccessful = false
 
